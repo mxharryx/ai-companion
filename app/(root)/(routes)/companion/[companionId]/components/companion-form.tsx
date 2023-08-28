@@ -224,7 +224,7 @@ export const CompanionForm = ({
                     control={form.control}
                     render={({field}) => (
                         <FormItem className="col-span-2 md:col-span-1">
-                            <FormLabel>Name</FormLabel>
+                            <FormLabel>Instructions</FormLabel>
                             <FormControl>
                                 <Textarea
                                 className="bg-background resize-none"
