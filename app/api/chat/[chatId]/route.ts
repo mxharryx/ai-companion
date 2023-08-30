@@ -38,9 +38,9 @@ export async function POST(
                         content: prompt,
                         role: "user",
                         userId: user.id,
-                    }
-                }
-            }
+                    },
+                },
+            },
         });
 
         if (!companion) {
@@ -113,15 +113,15 @@ export async function POST(
         const chunks = cleaned.split("\n");
         const response = chunks[0];
 
-        await memoryManager.writeToHistory(""+ response.trim(), companionKey);
+        await memoryManager.writeToHistory("" + response.trim(), companionKey);
         var Readable = require("stream").Readable;
 
         let s = new Readable();
         s.push(response);
         s.push(null);
 
-        if(response !== undefined && response.length > 1) {
-            memoryManager.writeToHistory(""+ response.trim(), companionKey);
+        if (response !== undefined && response.length > 1) {
+            memoryManager.writeToHistory("" + response.trim(), companionKey);
 
             await prismadb.companion.update({
                 where: {
@@ -129,17 +129,17 @@ export async function POST(
                 },
                 data: {
                     messages: {
-                        create:{
+                        create: {
                             content: response.trim(),
                             role: "system",
                             userId: user.id
-                        }
-                    }
-                }
-            })
-        };
+                        },
+                    },
+                },
+            });
+        }
 
-        return new StreamingTextResponse(s)
+        return new StreamingTextResponse(s);
 
     } catch (error) {
         console.log("[CHAT_POST]", error);
