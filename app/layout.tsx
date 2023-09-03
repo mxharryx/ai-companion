@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/toaster'
 import { ProModal } from '@/components/pro-modal'
-import Head from 'next/head'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <Head>
+        <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="" />
         <meta name="author" content="AI, Chatbot, Mohammed Harris, Software Development, Cloud Development, Game Development" />
@@ -40,7 +40,7 @@ export default function RootLayout({
         <meta property="twitter:description" content="Create Custom AI | A project by Mohammed Harris" />
         <meta name="twitter:image:alt" content="AI Companion's Landing Page"/>
         <meta name="twitter:creator" content="@mohammedharris_"/>
-        </Head>
+        </head>
         <body className={cn("bg-secondary", inter.className)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ProModal />
