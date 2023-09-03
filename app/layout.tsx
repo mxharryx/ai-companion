@@ -14,9 +14,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'AI Companion | Chat with anyone!',
   description: 'Create Custom AI | A project by Mohammed Harris',
-  openGraph: {
-    images: 'app/opengraph-image.png',
-  },
 }
 
 export default function RootLayout({
@@ -27,6 +24,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+        <head>
+        <meta property="og:image" content="<generated>" />
+        <meta property="og:image:type" content="<generated>" />
+        <meta property="og:image:width" content="<generated>" />
+        <meta property="og:image:height" content="<generated>" />
+        </head>
         <body className={cn("bg-secondary", inter.className)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ProModal />
