@@ -14,6 +14,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'AI Companion | Chat with anyone!',
   description: 'Create Custom AI | A project by Mohammed Harris',
+  openGraph: {
+    images: 'app/opengraph-image.png',
+  },
 }
 
 export default function RootLayout({
